@@ -214,36 +214,12 @@ loginForm.addEventListener('submit', function(e) {
     }
     
     if (isValid) {
-        // AJAX call to server using fetch API
-        fetch('/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email.value,
-                password: password.value
-            })
-        })
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            if (data.success) {
-                // Store login state in localStorage
-                localStorage.setItem('isLoggedIn', 'true');
-                localStorage.setItem('userName', data.user.name);
-                alert('Login successful!');
-                loginModal.classList.remove('active');
-                loginForm.reset();
-            } else {
-                alert('Login failed: ' + data.message);
-            }
-        })
-        .catch(function(error) {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
-        });
+        // Success - store login state
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userName', email.value.split('@')[0]);
+        alert('Login successful!');
+        loginModal.classList.remove('active');
+        loginForm.reset();
     }
 });
 
@@ -317,39 +293,347 @@ signupForm.addEventListener('submit', function(e) {
     }
     
     if (isValid) {
-        // AJAX call to server using fetch API
-        fetch('/api/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                firstName: firstName.value,
-                lastName: lastName.value,
-                email: email.value,
-                phone: phone.value,
-                password: password.value,
-                userType: userTypeInput.value
-            })
-        })
+        // Success
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userName', firstName.value);
+        alert('Account created successfully!');
+        signupModal.classList.remove('active');
+        signupForm.reset();
+    }
+});
+
+// ============================================================
+// ===== AJAX CALLS - LEARNING & EXPERIMENTING SECTION =====
+// ============================================================
+
+/*
+ * WHAT IS AJAX?
+ * -------------
+ * AJAX = Asynchronous JavaScript And XML
+ * - Allows web pages to communicate with a server WITHOUT reloading
+ * - Can send and receive data in the background
+ * - Makes web apps feel faster and more responsive
+ * 
+ * TWO WAYS TO MAKE AJAX CALLS:
+ * 1. XMLHttpRequest (Old way - more verbose)
+ * 2. Fetch API (Modern way - cleaner syntax)
+ */
+
+
+// =====================================================
+// METHOD 1: XMLHttpRequest (Traditional AJAX)
+// =====================================================
+
+/*
+ * XMLHttpRequest is the original way to make AJAX calls.
+ * It's more verbose but gives you more control.
+ */
+
+// Example 1: GET Request with XMLHttpRequest
+function ajaxGetExample() {
+    // Step 1: Create XMLHttpRequest object
+    var xhr = new XMLHttpRequest();
+    
+    // Step 2: Configure the request (method, url, async)
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users/1', true);
+    
+    // Step 3: Set up callback for when request completes
+    xhr.onreadystatechange = function() {
+        /*
+         * readyState values:
+         * 0 = UNSENT (request not initialized)
+         * 1 = OPENED (connection established)
+         * 2 = HEADERS_RECEIVED (request received)
+         * 3 = LOADING (processing request)
+         * 4 = DONE (request finished, response ready)
+         */
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // Success! Parse JSON response
+                var data = JSON.parse(xhr.responseText);
+                console.log('XMLHttpRequest GET Success:', data);
+                console.log('User Name:', data.name);
+                console.log('User Email:', data.email);
+            } else {
+                console.error('XMLHttpRequest Error:', xhr.status);
+            }
+        }
+    };
+    
+    // Step 4: Send the request
+    xhr.send();
+}
+
+// Example 2: POST Request with XMLHttpRequest
+function ajaxPostExample() {
+    var xhr = new XMLHttpRequest();
+    
+    // Configure POST request
+    xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+    
+    // Set request header for JSON data
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 201) {
+            var response = JSON.parse(xhr.responseText);
+            console.log('XMLHttpRequest POST Success:', response);
+        }
+    };
+    
+    // Prepare data to send
+    var postData = JSON.stringify({
+        title: 'My New Post',
+        body: 'This is the post content',
+        userId: 1
+    });
+    
+    // Send with data
+    xhr.send(postData);
+}
+
+
+// =====================================================
+// METHOD 2: Fetch API (Modern AJAX)
+// =====================================================
+
+/*
+ * Fetch API is the modern way to make HTTP requests.
+ * It uses Promises which makes the code cleaner.
+ * 
+ * Basic syntax:
+ * fetch(url, options)
+ *   .then(response => response.json())
+ *   .then(data => console.log(data))
+ *   .catch(error => console.error(error));
+ */
+
+// Example 3: GET Request with Fetch
+function fetchGetExample() {
+    fetch('https://jsonplaceholder.typicode.com/users/1')
         .then(function(response) {
+            // Check if request was successful
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Parse JSON from response
             return response.json();
         })
         .then(function(data) {
-            if (data.success) {
-                // Store login state
-                localStorage.setItem('isLoggedIn', 'true');
-                localStorage.setItem('userName', data.user.firstName);
-                alert('Account created successfully!');
-                signupModal.classList.remove('active');
-                signupForm.reset();
-            } else {
-                alert('Signup failed: ' + data.message);
-            }
+            // Handle the data
+            console.log('Fetch GET Success:', data);
+            console.log('User Name:', data.name);
         })
         .catch(function(error) {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
+            // Handle errors
+            console.error('Fetch Error:', error);
         });
+}
+
+// Example 4: POST Request with Fetch
+function fetchPostExample() {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            title: 'New Post Title',
+            body: 'Post content goes here',
+            userId: 1
+        })
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('Fetch POST Success:', data);
+    })
+    .catch(function(error) {
+        console.error('Fetch POST Error:', error);
+    });
+}
+
+// Example 5: Fetch with async/await (Cleanest syntax)
+async function fetchAsyncExample() {
+    try {
+        // await pauses until the Promise resolves
+        var response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+        
+        if (!response.ok) {
+            throw new Error('Request failed');
+        }
+        
+        var data = await response.json();
+        console.log('Async/Await Success:', data);
+        return data;
+        
+    } catch (error) {
+        console.error('Async/Await Error:', error);
     }
-});
+}
+
+/*
+// =====================================================
+// PRACTICAL EXAMPLES FOR THIS PROJECT
+// =====================================================
+
+// Example 6: Fetch Doctors from API
+function fetchDoctors() {
+    console.log('Fetching doctors...');
+    
+    // This would work with a real backend server
+    // For demo, using a fake API
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(users) {
+            console.log('=== Doctors List ===');
+            users.forEach(function(user, index) {
+                console.log((index + 1) + '. Dr. ' + user.name);
+            });
+        })
+        .catch(function(error) {
+            console.error('Error fetching doctors:', error);
+        });
+}
+
+// Example 7: Simulate Login with AJAX
+function simulateLogin(email, password) {
+    console.log('Attempting login...');
+    
+    // Simulate API call
+    fetch('https://jsonplaceholder.typicode.com/users/1')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(user) {
+            // Simulating authentication
+            console.log('Login Response:', {
+                success: true,
+                message: 'Welcome back, ' + user.name + '!',
+                user: {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email
+                }
+            });
+        })
+        .catch(function(error) {
+            console.error('Login failed:', error);
+        });
+}
+
+// Example 8: Fetch Multiple Resources
+function fetchMultipleResources() {
+    console.log('Fetching multiple resources...');
+    
+    // Promise.all - wait for all requests to complete
+    Promise.all([
+        fetch('https://jsonplaceholder.typicode.com/users/1').then(r => r.json()),
+        fetch('https://jsonplaceholder.typicode.com/posts/1').then(r => r.json()),
+        fetch('https://jsonplaceholder.typicode.com/comments/1').then(r => r.json())
+    ])
+    .then(function(results) {
+        var user = results[0];
+        var post = results[1];
+        var comment = results[2];
+        
+        console.log('=== All Data Loaded ===');
+        console.log('User:', user.name);
+        console.log('Post:', post.title);
+        console.log('Comment:', comment.body);
+    })
+    .catch(function(error) {
+        console.error('Error:', error);
+    });
+}
+
+
+// =====================================================
+// AJAX WITH LOADING STATES (User Experience)
+// =====================================================
+
+// Example 9: Show loading indicator during AJAX
+function fetchWithLoading() {
+    // Show loading message
+    console.log('⏳ Loading...');
+    
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(posts) {
+            // Hide loading, show data
+            console.log('✅ Loaded ' + posts.length + ' posts!');
+            console.log('First post:', posts[0].title);
+        })
+        .catch(function(error) {
+            // Hide loading, show error
+            console.log('❌ Error loading posts');
+            console.error(error);
+        });
+}
+
+
+// =====================================================
+// ERROR HANDLING EXAMPLES
+// =====================================================
+
+// Example 10: Proper Error Handling
+function fetchWithErrorHandling() {
+    fetch('https://jsonplaceholder.typicode.com/users/999')  // Non-existent user
+        .then(function(response) {
+            // Check HTTP status
+            if (response.status === 404) {
+                throw new Error('User not found (404)');
+            }
+            if (!response.ok) {
+                throw new Error('HTTP Error: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(function(data) {
+            console.log('User found:', data);
+        })
+        .catch(function(error) {
+            console.error('Error caught:', error.message);
+            // Show user-friendly message
+            alert('Sorry, we could not find that user.');
+        });
+}
+
+
+// =====================================================
+// HOW TO TEST THESE FUNCTIONS
+// =====================================================
+
+/*
+ * Open browser console (F12) and type any of these:
+ * 
+ * ajaxGetExample()        - XMLHttpRequest GET
+ * ajaxPostExample()       - XMLHttpRequest POST
+ * fetchGetExample()       - Fetch GET
+ * fetchPostExample()      - Fetch POST
+ * fetchAsyncExample()     - Fetch with async/await
+ * fetchDoctors()          - Fetch list of doctors
+ * simulateLogin()         - Simulate login
+ * fetchMultipleResources()- Fetch multiple at once
+ * fetchWithLoading()      - With loading indicator
+ * fetchWithErrorHandling()- Error handling demo
+ */
+
+// Auto-run demo on page load (comment out if not needed)
+/*
+console.log('==============================================');
+console.log('AJAX Learning Examples Loaded!');
+console.log('==============================================');
+console.log('Try these functions in the console:');
+console.log('- fetchDoctors()');
+console.log('- fetchGetExample()');
+console.log('- fetchPostExample()');
+console.log('- fetchWithLoading()');
+console.log('==============================================');
+
+*/
