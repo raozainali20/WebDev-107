@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oladoc - Find and Book the Best Doctors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <!-- Logo -->
+            <a href="index.html" class="logo">Oladoc</a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#hospitals">Hospitals</a></li>
+                <li><a href="#labs">Labs</a></li>
+                <li><a href="#surgeries">Surgeries</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+            
+            <!-- Buttons -->
+            <div class="nav-buttons" id="navButtons">
+                <a href="#" class="btn btn-orange" id="openSignupBtn">Join as Doctor</a>
+                <a href="#" class="btn btn-blue" id="openLoginBtn">Login/Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <!-- Left Side - Text and Search -->
+            <div class="hero-text">
+                <h1>Find and Book the <span class="highlight">Best Doctors</span> near you</h1>
+                <p class="hero-subtext">Book appointments with the best doctors and specialists such as Gynecologists, Skin Specialists, Child Specialists, and more.</p>
+                
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <div class="search-location">
+                        <span class="location-icon">📍</span>
+                        <input type="text" placeholder="Location">
+                        <button class="detect-btn">Detect</button>
+                    </div>
+                    <div class="search-input">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Search doctors, hospitals, specialities...">
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Doctor Image -->
+            <div class="hero-image">
+                <div class="doctor-placeholder">
+                    <span class="doctor-icon">👨‍⚕️</span>
+                    <p>Doctor Image</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <h2 class="section-title">Our Doctors</h2>
+            <p class="section-subtitle">Meet our experienced and qualified medical professionals</p>
+            
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-image">👨‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Ahmed Khan</h3>
+                        <p class="doctor-specialty">Cardiologist</p>
+                        <p class="doctor-experience">15 years experience</p>
+                        <div class="doctor-rating">⭐ 4.9 (120 reviews)</div>
+                        <a href="#" class="btn btn-blue btn-small">Book Appointment</a>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">👩‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Sarah Ali</h3>
+                        <p class="doctor-specialty">Dermatologist</p>
+                        <p class="doctor-experience">10 years experience</p>
+                        <div class="doctor-rating">⭐ 4.8 (95 reviews)</div>
+                        <a href="#" class="btn btn-blue btn-small">Book Appointment</a>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">👨‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Hassan Raza</h3>
+                        <p class="doctor-specialty">Pediatrician</p>
+                        <p class="doctor-experience">12 years experience</p>
+                        <div class="doctor-rating">⭐ 4.9 (150 reviews)</div>
+                        <a href="#" class="btn btn-blue btn-small">Book Appointment</a>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image">👩‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Fatima Malik</h3>
+                        <p class="doctor-specialty">Gynecologist</p>
+                        <p class="doctor-experience">18 years experience</p>
+                        <div class="doctor-rating">⭐ 4.7 (200 reviews)</div>
+                        <a href="#" class="btn btn-blue btn-small">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospitals Section -->
+    <section class="hospitals" id="hospitals">
+        <div class="container">
+            <h2 class="section-title">Top Hospitals</h2>
+            <p class="section-subtitle">Find the best hospitals and medical centers near you</p>
+            
+            <div class="hospitals-grid">
+                <div class="hospital-card">
+                    <div class="hospital-icon">🏥</div>
+                    <h3>Shifa International Hospital</h3>
+                    <p class="hospital-location">📍 Islamabad</p>
+                    <p class="hospital-desc">Multi-specialty hospital with 500+ beds and advanced facilities.</p>
+                    <div class="hospital-features">
+                        <span>Emergency</span>
+                        <span>ICU</span>
+                        <span>Surgery</span>
+                    </div>
+                </div>
+                
+                <div class="hospital-card">
+                    <div class="hospital-icon">🏥</div>
+                    <h3>Aga Khan University Hospital</h3>
+                    <p class="hospital-location">📍 Karachi</p>
+                    <p class="hospital-desc">Leading teaching hospital with world-class healthcare services.</p>
+                    <div class="hospital-features">
+                        <span>Emergency</span>
+                        <span>Oncology</span>
+                        <span>Cardiology</span>
+                    </div>
+                </div>
+                
+                <div class="hospital-card">
+                    <div class="hospital-icon">🏥</div>
+                    <h3>Services Hospital</h3>
+                    <p class="hospital-location">📍 Lahore</p>
+                    <p class="hospital-desc">Government hospital providing affordable healthcare to all.</p>
+                    <div class="hospital-features">
+                        <span>Emergency</span>
+                        <span>Trauma</span>
+                        <span>Pediatrics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Labs Section -->
+    <section class="labs" id="labs">
+        <div class="container">
+            <h2 class="section-title">Laboratory Tests</h2>
+            <p class="section-subtitle">Get accurate lab tests from certified laboratories</p>
+            
+            <div class="labs-grid">
+                <div class="lab-card">
+                    <div class="lab-icon">🧪</div>
+                    <h3>Blood Tests</h3>
+                    <p>Complete blood count, sugar, cholesterol and more</p>
+                    <span class="lab-price">Starting Rs. 500</span>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">🔬</div>
+                    <h3>COVID-19 Tests</h3>
+                    <p>PCR and Rapid Antigen testing available</p>
+                    <span class="lab-price">Starting Rs. 1,500</span>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">📊</div>
+                    <h3>Thyroid Profile</h3>
+                    <p>T3, T4, TSH comprehensive testing</p>
+                    <span class="lab-price">Starting Rs. 2,000</span>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">🩻</div>
+                    <h3>X-Ray & Imaging</h3>
+                    <p>X-Ray, MRI, CT Scan, Ultrasound</p>
+                    <span class="lab-price">Starting Rs. 1,000</span>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">❤️</div>
+                    <h3>Cardiac Tests</h3>
+                    <p>ECG, Echo, Stress test and more</p>
+                    <span class="lab-price">Starting Rs. 3,000</span>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">🧬</div>
+                    <h3>Genetic Testing</h3>
+                    <p>DNA testing and genetic screening</p>
+                    <span class="lab-price">Starting Rs. 15,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surgeries Section -->
+    <section class="surgeries" id="surgeries">
+        <div class="container">
+            <h2 class="section-title">Procedures & Surgeries</h2>
+            <p class="section-subtitle">Expert surgical care with experienced surgeons</p>
+            
+            <div class="surgeries-grid">
+                <div class="surgery-card">
+                    <div class="surgery-icon">🫀</div>
+                    <h3>Cardiac Surgery</h3>
+                    <p>Bypass surgery, valve replacement, angioplasty</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="surgery-card">
+                    <div class="surgery-icon">🦴</div>
+                    <h3>Orthopedic Surgery</h3>
+                    <p>Joint replacement, fracture repair, spine surgery</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="surgery-card">
+                    <div class="surgery-icon">👁️</div>
+                    <h3>Eye Surgery</h3>
+                    <p>LASIK, cataract removal, glaucoma treatment</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="surgery-card">
+                    <div class="surgery-icon">🧠</div>
+                    <h3>Neurosurgery</h3>
+                    <p>Brain tumor removal, spine surgery, nerve repair</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Health Blog</h2>
+            <p class="section-subtitle">Latest health tips and medical news</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">📰</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Health Tips</span>
+                        <h3>10 Ways to Boost Your Immune System</h3>
+                        <p>Learn simple daily habits that can strengthen your body's natural defenses.</p>
+                        <div class="blog-meta">
+                            <span>👤 Dr. Ahmed</span>
+                            <span>📅 March 15, 2026</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">📰</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Nutrition</span>
+                        <h3>The Benefits of a Balanced Diet</h3>
+                        <p>Discover how proper nutrition can prevent diseases and improve quality of life.</p>
+                        <div class="blog-meta">
+                            <span>👤 Dr. Fatima</span>
+                            <span>📅 March 10, 2026</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">📰</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Mental Health</span>
+                        <h3>Managing Stress in Modern Life</h3>
+                        <p>Expert tips for dealing with anxiety and maintaining mental wellness.</p>
+                        <div class="blog-meta">
+                            <span>👤 Dr. Hassan</span>
+                            <span>📅 March 5, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Explore our wide range of healthcare services</p>
+            
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="card-icon">💻</div>
+                    <h3>Consult Online</h3>
+                    <p>Connect with doctors via video call from the comfort of your home.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="card-icon">🏥</div>
+                    <h3>In-Clinic Appointments</h3>
+                    <p>Book appointments and visit doctors at their clinics.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="card-icon">🧪</div>
+                    <h3>Laboratory Tests</h3>
+                    <p>Get lab tests done at certified laboratories near you.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="card-icon">⚕️</div>
+                    <h3>Procedures & Surgeries</h3>
+                    <p>Find the best surgeons for various medical procedures.</p>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="card-icon">💊</div>
+                    <h3>Medicines</h3>
+                    <p>Order medicines online and get them delivered to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="reviews-title">Our Customers <span class="highlight-blue">love us</span></h2>
+            <p class="reviews-subtitle">Check out the reviews from our satisfied customers</p>
+            
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Great platform, very efficient and works really well on both phone and web. I think this is the most easiest way of booking appointments in Pakistan as it has made the whole process much more efficient."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">👤</div>
+                        <p class="reviewer-name">Umer Fayyaz</p>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"A very helpful app for booking appointments and searching for the required doctors. Has made my life a lot easy. I would strongly recommend this to all"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">👤</div>
+                        <p class="reviewer-name">Aneeb Ryan</p>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Literally the best website to book the appointments online for Doctors. The service is great, helpline guys are very cooperative and understanding. And I don't have to hassle through different hospitals anymore now."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">👤</div>
+                        <p class="reviewer-name">Zainab Tariq</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <span class="logo-ola">ola</span><span class="logo-doc">d<span class="logo-plus">+</span>c</span>
+                </a>
+                <p class="footer-description">Book appointments with the best Doctors and Specialists such as Gynecologists, Skin Specialists, Child Specialists, Surgeons, etc. Avail test services such as MRI, CT scan, Ultrasound, X-Ray, etc. and Online Doctor Video Consultations all across Pakistan conveniently.</p>
+            </div>
+            
+            <!-- Company Links -->
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Delivery Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Payment Terms</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cancelation Policy</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Process</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Oladoc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-overlay" data-close="loginModal"></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close="loginModal">&times;</button>
+            <div class="auth-header">
+                <h1>Welcome Back!</h1>
+                <p>Login to your Oladoc account</p>
+            </div>
+            
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+                    <span class="error-message" id="loginEmailError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" data-target="loginPassword">👁️</button>
+                    </div>
+                    <span class="error-message" id="loginPasswordError"></span>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-blue btn-full">Login</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-overlay" data-close="signupModal"></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close="signupModal">&times;</button>
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join Oladoc and book appointments easily</p>
+            </div>
+            
+            <!-- User Type Selection -->
+            <div class="user-type-selector">
+                <button type="button" class="type-btn active" data-type="patient">
+                    <span>👤</span> Patient
+                </button>
+                <button type="button" class="type-btn" data-type="doctor">
+                    <span>👨‍⚕️</span> Doctor
+                </button>
+            </div>
+            
+            <form id="signupForm" class="auth-form">
+                <input type="hidden" id="userType" name="userType" value="patient">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                        <span class="error-message" id="firstNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                        <span class="error-message" id="lastNameError"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
+                    <span class="error-message" id="signupEmailError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+                
+                <!-- Doctor-specific fields -->
+                <div class="doctor-fields" id="doctorFields">
+                    <div class="form-group">
+                        <label for="specialization">Specialization</label>
+                        <select id="specialization" name="specialization">
+                            <option value="">Select specialization</option>
+                            <option value="general">General Physician</option>
+                            <option value="cardiologist">Cardiologist</option>
+                            <option value="dermatologist">Dermatologist</option>
+                            <option value="gynecologist">Gynecologist</option>
+                            <option value="pediatrician">Pediatrician</option>
+                            <option value="orthopedic">Orthopedic</option>
+                            <option value="neurologist">Neurologist</option>
+                            <option value="dentist">Dentist</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="licenseNumber">License Number</label>
+                        <input type="text" id="licenseNumber" name="licenseNumber" placeholder="Medical license number">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
+                        <button type="button" class="toggle-password" data-target="signupPassword">👁️</button>
+                    </div>
+                    <span class="error-message" id="signupPasswordError"></span>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+                        <button type="button" class="toggle-password" data-target="confirmPassword">👁️</button>
+                    </div>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-blue btn-full">Create Account</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
