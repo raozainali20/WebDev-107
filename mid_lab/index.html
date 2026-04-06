@@ -6,6 +6,8 @@
     <title>Oladoc - Find and Book the Best Doctors</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- jQuery CDN for carousel controls -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -63,10 +65,7 @@
             
             <!-- Right Side - Doctor Image -->
             <div class="hero-image">
-                <div class="doctor-placeholder">
-                    <span class="doctor-icon">👨‍⚕️</span>
-                    <p>Doctor Image</p>
-                </div>
+                <img src="doctor-hero.png" alt="Dr. Ali - Oladoc Doctor" class="doctor-img">
             </div>
         </div>
     </section>
@@ -121,6 +120,89 @@
                         <a href="#" class="btn btn-blue btn-small">Book Appointment</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - Carousel -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Explore our wide range of healthcare services</p>
+            
+            <!-- Carousel Container -->
+            <div class="carousel-wrapper">
+                <!-- Carousel Track -->
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Card 1 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">💻</div>
+                        <h3>Consult Online</h3>
+                        <p>Connect with doctors via video call from the comfort of your home.</p>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">🏥</div>
+                        <h3>In-Clinic Appointments</h3>
+                        <p>Book appointments and visit doctors at their clinics.</p>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">🧪</div>
+                        <h3>Laboratory Tests</h3>
+                        <p>Get lab tests done at certified laboratories near you.</p>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">⚕️</div>
+                        <h3>Procedures & Surgeries</h3>
+                        <p>Find the best surgeons for various medical procedures.</p>
+                    </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">💊</div>
+                        <h3>Medicines</h3>
+                        <p>Order medicines online and get them delivered to your doorstep.</p>
+                    </div>
+                    
+                    <!-- Card 6 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">🚑</div>
+                        <h3>Emergency Care</h3>
+                        <p>24/7 emergency medical services and ambulance booking.</p>
+                    </div>
+                    
+                    <!-- Card 7 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">🩺</div>
+                        <h3>Health Checkups</h3>
+                        <p>Comprehensive health checkup packages for all ages.</p>
+                    </div>
+                    
+                    <!-- Card 8 -->
+                    <div class="service-card carousel-slide">
+                        <div class="card-icon">🦷</div>
+                        <h3>Dental Care</h3>
+                        <p>Find expert dentists for all your dental care needs.</p>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous slide">
+                    ❮
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next slide">
+                    ❯
+                </button>
+            </div>
+            
+            <!-- Slide Counter -->
+            <div class="carousel-counter">
+                <span id="slideCounter">Showing 1 of 8</span>
             </div>
         </div>
     </section>
@@ -305,51 +387,6 @@
                             <span>📅 March 5, 2026</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Explore our wide range of healthcare services</p>
-            
-            <div class="services-grid">
-                <!-- Card 1 -->
-                <div class="service-card">
-                    <div class="card-icon">💻</div>
-                    <h3>Consult Online</h3>
-                    <p>Connect with doctors via video call from the comfort of your home.</p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="service-card">
-                    <div class="card-icon">🏥</div>
-                    <h3>In-Clinic Appointments</h3>
-                    <p>Book appointments and visit doctors at their clinics.</p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="service-card">
-                    <div class="card-icon">🧪</div>
-                    <h3>Laboratory Tests</h3>
-                    <p>Get lab tests done at certified laboratories near you.</p>
-                </div>
-                
-                <!-- Card 4 -->
-                <div class="service-card">
-                    <div class="card-icon">⚕️</div>
-                    <h3>Procedures & Surgeries</h3>
-                    <p>Find the best surgeons for various medical procedures.</p>
-                </div>
-                
-                <!-- Card 5 -->
-                <div class="service-card">
-                    <div class="card-icon">💊</div>
-                    <h3>Medicines</h3>
-                    <p>Order medicines online and get them delivered to your doorstep.</p>
                 </div>
             </div>
         </div>
@@ -586,5 +623,6 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script src="carousel.js"></script>
 </body>
 </html>

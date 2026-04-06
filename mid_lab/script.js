@@ -320,7 +320,6 @@ signupForm.addEventListener('submit', function(e) {
 // PRACTICAL EXAMPLES FOR THIS PROJECT
 // =====================================================
 
-// Example 6: Fetch Doctors from API
 function fetchDoctors() {
     console.log('Fetching doctors...');
     
@@ -341,7 +340,6 @@ function fetchDoctors() {
         });
 }
 
-// Example 7: Simulate Login with AJAX
 function simulateLogin(email, password) {
     console.log('Attempting login...');
     
@@ -367,7 +365,7 @@ function simulateLogin(email, password) {
         });
 }
 
-// Example 8: Fetch Multiple Resources
+
 function fetchMultipleResources() {
     console.log('Fetching multiple resources...');
     
@@ -397,7 +395,6 @@ function fetchMultipleResources() {
 // AJAX WITH LOADING STATES (User Experience)
 // =====================================================
 
-// Example 9: Show loading indicator during AJAX
 function fetchWithLoading() {
     // Show loading message
     console.log('⏳ Loading...');
@@ -423,7 +420,6 @@ function fetchWithLoading() {
 // ERROR HANDLING EXAMPLES
 // =====================================================
 
-// Example 10: Proper Error Handling
 function fetchWithErrorHandling() {
     fetch('https://jsonplaceholder.typicode.com/users/999')  // Non-existent user
         .then(function(response) {
@@ -445,37 +441,3 @@ function fetchWithErrorHandling() {
             alert('Sorry, we could not find that user.');
         });
 }
-
-
-// =====================================================
-// HOW TO TEST THESE FUNCTIONS
-// =====================================================
-
-/*
- * Open browser console (F12) and type any of these:
- * 
- * ajaxGetExample()        - XMLHttpRequest GET
- * ajaxPostExample()       - XMLHttpRequest POST
- * fetchGetExample()       - Fetch GET
- * fetchPostExample()      - Fetch POST
- * fetchAsyncExample()     - Fetch with async/await
- * fetchDoctors()          - Fetch list of doctors
- * simulateLogin()         - Simulate login
- * fetchMultipleResources()- Fetch multiple at once
- * fetchWithLoading()      - With loading indicator
- * fetchWithErrorHandling()- Error handling demo
- */
-
-// Auto-run demo on page load (comment out if not needed)
-/*
-console.log('==============================================');
-console.log('AJAX Learning Examples Loaded!');
-console.log('==============================================');
-console.log('Try these functions in the console:');
-console.log('- fetchDoctors()');
-console.log('- fetchGetExample()');
-console.log('- fetchPostExample()');
-console.log('- fetchWithLoading()');
-console.log('==============================================');
-
-*/
