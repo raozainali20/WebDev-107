@@ -1,0 +1,1884 @@
+/* ===== Basic Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-orange {
+    background-color: #ff7a00;
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: #e66d00;
+    transform: translateY(-2px);
+}
+
+.btn-blue {
+    background-color: #0066ff;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: #0052cc;
+    transform: translateY(-2px);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0066ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+}
+
+.nav-links a:hover {
+    color: #0066ff;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.user-greeting {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ===== Hamburger Menu =====*/
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 200;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Animation when active */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    background: linear-gradient(135deg, #6b47dc 0%, #1a237e 100%);
+    padding: 60px 0;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text .highlight {
+    color: #ffd700;
+}
+
+.hero-subtext {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* Search Bar */
+.search-bar {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-location,
+.search-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-location {
+    border-right: 1px solid #ddd;
+    padding-right: 10px;
+}
+
+.location-icon,
+.search-icon {
+    font-size: 18px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    flex: 1;
+    padding: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detect-btn {
+    background: #e3f2fd;
+    color: #0066ff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.detect-btn:hover {
+    background: #bbdefb;
+}
+
+.search-btn {
+    background: #0066ff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-btn:hover {
+    background: #0052cc;
+}
+
+/* Hero Image */
+.hero-image {
+    flex: 0 0 350px;
+}
+
+.doctor-placeholder {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 60px;
+    text-align: center;
+    color: white;
+}
+
+.doctor-icon {
+    font-size: 100px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* ===== Services Section ===== */
+.services {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* ===== Doctors Section ===== */
+.doctors {
+    padding: 80px 0;
+    background: #f0f4ff;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.doctor-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-image {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.doctor-info h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.doctor-specialty {
+    font-size: 14px;
+    color: #0066ff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.doctor-experience {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.doctor-rating {
+    font-size: 13px;
+    color: #f39c12;
+    margin-bottom: 15px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+/* ===== Hospitals Section ===== */
+.hospitals {
+    padding: 80px 0;
+    background: white;
+}
+
+.hospitals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.hospital-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hospital-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hospital-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hospital-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.hospital-location {
+    font-size: 14px;
+    color: #0066ff;
+    margin-bottom: 10px;
+}
+
+.hospital-desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.hospital-features {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hospital-features span {
+    background: #e3f2fd;
+    color: #0066ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* ===== Labs Section ===== */
+.labs {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.lab-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.lab-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.lab-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.lab-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.lab-price {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #27ae60;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===== Surgeries Section ===== */
+.surgeries {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.surgeries .section-title,
+.surgeries .section-subtitle {
+    color: white;
+}
+
+.surgeries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.surgery-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.surgery-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.surgery-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.surgery-card h3 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.surgery-card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-outline {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #667eea;
+}
+
+/* ===== Blog Section ===== */
+.blog {
+    padding: 80px 0;
+    background: white;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.blog-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image {
+    height: 150px;
+    background: linear-gradient(135deg, #6b47dc 0%, #1a237e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-category {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #0066ff;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.blog-card h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #999;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ===== Customer Reviews Section ===== */
+.reviews {
+    padding: 80px 0;
+    background: #fffaf0;
+}
+
+.reviews-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.highlight-blue {
+    color: #1a237e;
+}
+
+.reviews-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stars {
+    display: inline-block;
+    background: #4caf50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.reviewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.reviewer-avatar {
+    width: 60px;
+    height: 60px;
+    background: #fff3e0;
+    border: 3px solid #ff9800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.reviewer-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a237e;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: #2d2d2d;
+    color: white;
+    padding: 0;
+}
+
+.footer-content {
+    display: flex;
+    gap: 80px;
+    padding: 60px 20px;
+}
+
+.footer-brand {
+    flex: 1;
+    max-width: 450px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.logo-ola {
+    color: #ff9800;
+}
+
+.logo-doc {
+    color: white;
+}
+
+.logo-plus {
+    color: #ff9800;
+}
+
+.footer-description {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.8;
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    color: #00bcd4;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    background: #252525;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* Services - 3 columns on tablet */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Reviews - 2 columns on tablet */
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Doctors - 2 columns on tablet */
+    .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Hospitals - 2 columns on tablet */
+    .hospitals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Labs - 2 columns on tablet */
+    .labs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Surgeries - 2 columns on tablet */
+    .surgeries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Blog - 2 columns on tablet */
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer - stack vertically */
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-brand {
+        max-width: 100%;
+    }
+    
+    /* Hero adjustments */
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    
+    .hero-image {
+        flex: 0 0 280px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar - Mobile Menu */
+    .navbar {
+        padding: 12px 0;
+    }
+    
+    .navbar-content {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    /* Show hamburger on mobile */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Hide nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        background: white;
+        padding: 20px 0;
+        gap: 0;
+        border-top: 1px solid #eee;
+        margin-top: 15px;
+    }
+    
+    /* Show nav links when active */
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 15px;
+        color: #333;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        background-color: #f5f5f5;
+        color: #0066ff;
+    }
+    
+    /* Hide nav buttons by default */
+    .nav-buttons {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        padding: 15px 20px;
+        gap: 10px;
+        background: white;
+        border-top: 1px solid #eee;
+    }
+    
+    /* Show nav buttons when active */
+    .nav-buttons.active {
+        display: flex;
+    }
+    
+    .nav-buttons .btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    /* Hero - column layout */
+    .hero {
+        margin: 10px;
+        padding: 40px 15px;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    
+    .hero-subtext {
+        margin: 0 auto 25px;
+        font-size: 14px;
+    }
+    
+    /* Search Bar - stack vertically */
+    .search-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .search-location,
+    .search-input {
+        min-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .search-location {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+    
+    .search-bar input {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .detect-btn,
+    .search-btn {
+        width: auto;
+        flex-shrink: 0;
+    }
+    
+    /* Hero Image */
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .doctor-placeholder {
+        padding: 40px 20px;
+    }
+    
+    .doctor-icon {
+        font-size: 60px;
+    }
+    
+    /* Services - 2 columns on mobile */
+    .services {
+        padding: 60px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .section-subtitle {
+        font-size: 14px;
+        margin-bottom: 35px;
+    }
+    
+    .service-card {
+        padding: 25px 15px;
+    }
+    
+    .card-icon {
+        font-size: 40px;
+    }
+    
+    .service-card h3 {
+        font-size: 14px;
+    }
+    
+    .service-card p {
+        font-size: 12px;
+    }
+    
+    /* Reviews - 1 column on mobile */
+    .reviews {
+        padding: 40px 0;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .reviews-title {
+        font-size: 22px;
+    }
+    
+    .reviews-subtitle {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+    
+    .review-card {
+        padding: 20px 15px;
+    }
+    
+    .review-text {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .reviewer-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    
+    .stars {
+        padding: 5px 12px;
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    
+    /* Doctors - 2 columns on mobile (compact) */
+    .doctors {
+        padding: 40px 0;
+    }
+    
+    .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .doctor-card {
+        padding: 15px 10px;
+    }
+    
+    .doctor-image {
+        font-size: 40px;
+        margin-bottom: 8px;
+    }
+    
+    .doctor-info h3 {
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+    
+    .doctor-specialty {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+    
+    .doctor-experience {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .doctor-rating {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .btn-small {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    /* Hospitals - 2 columns on mobile (compact) */
+    .hospitals {
+        padding: 40px 0;
+    }
+    
+    .hospitals-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .hospital-card {
+        padding: 15px;
+    }
+    
+    .hospital-icon {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+    
+    .hospital-card h3 {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    
+    .hospital-location {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+    
+    .hospital-desc {
+        font-size: 11px;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .hospital-features {
+        gap: 5px;
+    }
+    
+    .hospital-features span {
+        padding: 3px 8px;
+        font-size: 9px;
+    }
+    
+    /* Labs - 2 columns on mobile (compact) */
+    .labs {
+        padding: 40px 0;
+    }
+    
+    .labs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .lab-card {
+        padding: 15px 10px;
+    }
+    
+    .lab-icon {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+    
+    .lab-card h3 {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    
+    .lab-card p {
+        font-size: 10px;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .lab-price {
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+    
+    /* Surgeries - 2 columns on mobile (compact) */
+    .surgeries {
+        padding: 40px 0;
+    }
+    
+    .surgeries-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .surgery-card {
+        padding: 15px 10px;
+    }
+    
+    .surgery-icon {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+    
+    .surgery-card h3 {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    
+    .surgery-card p {
+        font-size: 10px;
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .btn-outline {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    /* Blog - 1 column on mobile (compact) */
+    .blog {
+        padding: 40px 0;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .blog-card {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .blog-image {
+        width: 100px;
+        min-width: 100px;
+        height: auto;
+        min-height: 100px;
+        font-size: 30px;
+    }
+    
+    .blog-content {
+        padding: 12px;
+    }
+    
+    .blog-category {
+        padding: 3px 8px;
+        font-size: 9px;
+        margin-bottom: 5px;
+    }
+    
+    .blog-card h3 {
+        font-size: 13px;
+        margin-bottom: 5px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .blog-card p {
+        font-size: 11px;
+        margin-bottom: 8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .blog-meta {
+        font-size: 10px;
+        gap: 10px;
+    }
+    
+    /* Section headers compact */
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .section-subtitle {
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .footer-logo {
+        font-size: 26px;
+    }
+    
+    .footer-description {
+        font-size: 13px;
+    }
+    
+    .footer-links h4 {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links ul {
+        gap: 12px;
+    }
+    
+    .footer-links a {
+        font-size: 13px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Container padding */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Navbar */
+    .logo {
+        font-size: 22px;
+    }
+    
+    .nav-links a {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .nav-buttons .btn {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+    
+    /* Hero */
+    .hero {
+        margin: 8px;
+        padding: 30px 12px;
+        border-radius: 15px;
+    }
+    
+    .hero-text h1 {
+        font-size: 24px;
+    }
+    
+    .hero-subtext {
+        font-size: 13px;
+    }
+    
+    /* Search Bar - full width buttons */
+    .search-location,
+    .search-input {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .detect-btn,
+    .search-btn {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    /* Services - 2 columns on small mobile */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .service-card {
+        padding: 15px 10px;
+    }
+    
+    .card-icon {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+    
+    .service-card h3 {
+        font-size: 12px;
+    }
+    
+    .service-card p {
+        font-size: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+    
+    .section-subtitle {
+        font-size: 11px;
+        margin-bottom: 20px;
+    }
+    
+    /* Doctors - smaller on very small screens */
+    .doctor-image {
+        font-size: 35px;
+    }
+    
+    .doctor-info h3 {
+        font-size: 12px;
+    }
+    
+    .doctor-specialty,
+    .doctor-experience,
+    .doctor-rating {
+        font-size: 9px;
+    }
+    
+    .btn-small {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
+    /* Labs */
+    .labs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .lab-icon {
+        font-size: 25px;
+    }
+    
+    .lab-card h3 {
+        font-size: 11px;
+    }
+    
+    /* Reviews */
+    .reviews-title {
+        font-size: 18px;
+    }
+    
+    .reviewer-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    /* Blog horizontal layout smaller */
+    .blog-image {
+        width: 80px;
+        min-width: 80px;
+        min-height: 80px;
+        font-size: 25px;
+    }
+    
+    .blog-card h3 {
+        font-size: 12px;
+    }
+    
+    .blog-card p {
+        font-size: 10px;
+        display: none;
+    }
+    
+    .blog-meta {
+        font-size: 9px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        padding: 30px 15px;
+    }
+    
+    .footer-logo {
+        font-size: 24px;
+    }
+    
+    .footer-description {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+    
+    .footer-bottom {
+        padding: 15px 0;
+    }
+    
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}
+
+/* ===== Modal Styles ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 450px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+/* ===== Auth Form Styles ===== */
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+    outline: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    width: 100%;
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+.error-message {
+    font-size: 12px;
+    color: #e74c3c;
+    min-height: 16px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #1976d2;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* User Type Selector */
+.user-type-selector {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.type-btn:hover {
+    border-color: #1976d2;
+}
+
+.type-btn.active {
+    border-color: #1976d2;
+    background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+    color: #1976d2;
+}
+
+/* Doctor Fields (hidden by default) */
+.doctor-fields {
+    display: none;
+}
+
+.doctor-fields.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Password Strength */
+.password-strength {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.strength-bar {
+    flex: 1;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-bar::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.strength-bar.weak::before {
+    width: 33%;
+    background: #e74c3c;
+}
+
+.strength-bar.medium::before {
+    width: 66%;
+    background: #f39c12;
+}
+
+.strength-bar.strong::before {
+    width: 100%;
+    background: #27ae60;
+}
+
+.strength-text {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.strength-text.weak { color: #e74c3c; }
+.strength-text.medium { color: #f39c12; }
+.strength-text.strong { color: #27ae60; }
+
+/* Modal Responsive */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 25px 20px;
+    }
+    
+    .auth-header h1 {
+        font-size: 22px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .user-type-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
